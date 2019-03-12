@@ -1,0 +1,29 @@
+* {
+    -fx-glowny: #2c2c2c;
+    -fx-drugi: #00B1C7;
+    -fx-drugi-najechanie: #004359;
+    -fx-glownytekst: #BABABA;
+    -fx-tekstniebieski: #00E5FB;
+    -fx-blad: #ba0e1b;
+    -fx-blad-dwa: #ba1300;
+
+}
+
+
+.root {
+    -fx-background-color: -fx-glowny;
+}
+
+.jfx-button {
+    -fx-background-color: linear-gradient(#ff3b4c, #ff7b1f),
+    radial-gradient(center 50% -40%, radius 200%, #ee8400 45%, #c85800 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0.0, 0, 1);
+    -fx-text-fill: #000000;
+}
+
+.text-fill {
+    -fx-text-fill: #ff3b4c;
+    -fx-fill: #ff3b4c;
+}

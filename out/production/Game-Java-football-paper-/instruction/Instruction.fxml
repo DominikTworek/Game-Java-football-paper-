@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" stylesheets="@../functions/loyout.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="instruction.InstructionController">
+   <children>
+      <JFXButton layoutX="365.0" layoutY="353.0" text="wróć">
+         <font>
+            <Font size="20.0" />
+         </font></JFXButton>
+      <Text fill="#ff4d00" layoutX="268.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instrukcja" textAlignment="CENTER" wrappingWidth="263.13671875">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <Text layoutX="7.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-fill" text="Celem gry jest umieszczenie w bramce przeciwnika wirtualnej piłki, która początkowo znajduje się na środku boiska, a w kolejnych ruchach jest przemieszczana pomiędzy sąsiednimi przecięciami kratek. Koniec gry następuje również w sytuacji, kiedy któryś z graczy zostanie zablokowany i nie może wykonać żadnego ruchu (wtedy automatycznie przegrywa)." wrappingWidth="785.90234375" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.09765625">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="8.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-fill" text="W jednym ruchu piłka może być przemieszczona na jedno z ośmiu sąsiednich pól (poziomo, pionowo lub po ukosie) i w wyniku przemieszczenia pozycja początkowa jest łączona odcinkiem z pozycją końcową." wrappingWidth="785.90234375">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="8.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-fill" text="Piłka nie może przemieszczać się po brzegu boiska ani odcinkach, po których już wcześniej się przemieszczała, może jednak od nich się odbijać, tzn. jeśli w pozycji końcowej znajdował się przed wykonaniem ruchu koniec jakiegoś odcinka lub brzeg boiska, to po wykonaniu ruchu gracz wykonuje kolejny." wrappingWidth="785.90234375">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
