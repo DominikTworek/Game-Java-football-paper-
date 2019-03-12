@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="jdk" jdkName="9.0" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="jfoenix-9.0.4" level="project" />
-    <orderEntry type="library" exported="" name="fontawesomefx-8.9" level="project" />
+    <orderEntry type="library" name="fontawesomefx-8.9" level="project" />
+    <orderEntry type="library" name="jfoenix-9.0.4" level="project" />
   </component>
 </module>

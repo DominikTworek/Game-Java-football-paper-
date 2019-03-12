@@ -10,7 +10,7 @@ public class InstructionController {
     @FXML
     void back(ActionEvent event) {
         try {
-            Windows.changeScene(event, "../mainmenu/StartGame.fxml");
+            Windows.changeScene(event, "../mainMenu/MainMenu.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }

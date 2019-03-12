@@ -23,5 +23,11 @@
 hs_err_pid*
 .idea/workspace.xml
 .idea/workspace.xml
-
 idea/
+.idea/
+.idea/*
+.idea
+.out/
+.out
+out/
+.out/*

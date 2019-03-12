@@ -23,6 +23,15 @@
     -fx-text-fill: #000000;
 }
 
+.jfx-button:hover {
+    -fx-background-color: linear-gradient(#9e2b33, #9c4e1a),
+    radial-gradient(center 50% -40%, radius 200%, #a35400 45%, #824100 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0.0, 0, 1);
+    -fx-text-fill: #000000;
+}
+
 .text-fill {
     -fx-text-fill: #ff3b4c;
     -fx-fill: #ff3b4c;
