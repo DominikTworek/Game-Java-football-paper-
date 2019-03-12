@@ -6,17 +6,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" stylesheets="@../functions/loyout.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainmenu.MainMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" stylesheets="@../functions/loyout.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainMenu.MainMenuController">
    <children>
-      <JFXButton alignment="CENTER" layoutX="361.0" layoutY="216.0" text="Start Gry" textAlignment="CENTER">
+      <JFXButton alignment="CENTER" layoutX="354.0" layoutY="217.0" onAction="#gameComputer" text="Komputer" textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font></JFXButton>
-      <JFXButton layoutX="358.0" layoutY="285.0" onAction="#clickInstruction" text="Instrukcja">
+      <JFXButton layoutX="359.0" layoutY="288.0" onAction="#gamePlayer" text="2 Graczy">
          <font>
             <Font size="15.0" />
          </font></JFXButton>
-      <JFXButton layoutX="370.0" layoutY="355.0" text="Wyjdź">
+      <JFXButton layoutX="370.0" layoutY="355.0" onAction="#back" text="Wróć">
          <font>
             <Font size="15.0" />
          </font></JFXButton>
