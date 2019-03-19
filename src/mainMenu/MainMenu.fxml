@@ -6,21 +6,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" stylesheets="@../functions/loyout.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainMenu.MainMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../functions/loyout.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainMenu.MainMenuController">
    <children>
-      <JFXButton alignment="CENTER" layoutX="361.0" layoutY="216.0" onAction="#startGame" text="Start Gry" textAlignment="CENTER">
+      <JFXButton alignment="CENTER" layoutX="458.0" layoutY="285.0" onAction="#startGame" prefWidth="100.0" text="Start Gry" textAlignment="CENTER" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="285.0">
          <font>
             <Font size="15.0" />
          </font></JFXButton>
-      <JFXButton layoutX="358.0" layoutY="285.0" onAction="#clickInstruction" text="Instrukcja">
+      <JFXButton layoutX="458.0" layoutY="391.0" onAction="#clickInstruction" prefWidth="100.0" text="Instrukcja" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="385.0">
          <font>
             <Font size="15.0" />
          </font></JFXButton>
-      <JFXButton layoutX="370.0" layoutY="355.0" onAction="#exit" text="Wyjdź">
+      <JFXButton layoutX="458.0" layoutY="505.0" onAction="#exit" prefWidth="100.0" text="Wyjdź" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="485.0">
          <font>
             <Font size="15.0" />
          </font></JFXButton>
-      <ImageView fitHeight="184.0" fitWidth="389.0" layoutX="216.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="220.0" fitWidth="450.0" layoutX="288.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="275.0">
          <image>
             <Image url="@../resources/logo.png" />
          </image></ImageView>

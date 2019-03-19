@@ -14,6 +14,10 @@
     -fx-background-color: -fx-glowny;
 }
 
+.chat-background {
+    -fx-background-color: #3c3c3c;
+}
+
 .jfx-button {
     -fx-background-color: linear-gradient(#ff3b4c, #ff7b1f),
     radial-gradient(center 50% -40%, radius 200%, #ee8400 45%, #c85800 50%);
@@ -32,7 +36,19 @@
     -fx-text-fill: #000000;
 }
 
-.text-fill {
-    -fx-text-fill: #ff3b4c;
-    -fx-fill: #ff3b4c;
+.gracz_aktywny {
+    -fx-text-fill: -fx-glownytekst;
+    -jfx-focus-color: radial-gradient(focus-distance 0%, center 50% 50%, radius 40%, #8eff48, #3c3c3c);;
+    -jfx-unfocus-color: radial-gradient(focus-distance 0%, center 50% 50%, radius 40%, #8eff48, #3c3c3c);
 }
+
+.wiadomosc {
+    -fx-text-fill: -fx-glownytekst;
+    -jfx-focus-color: radial-gradient(focus-distance 0%, center 50% 50%, radius 40%, #ff7b1f, #3c3c3c);;
+    -jfx-unfocus-color: radial-gradient(focus-distance 0%, center 50% 50%, radius 40%, #ff7b1f, #3c3c3c);
+}
+
+.text-fill {
+     -fx-text-fill: #ff3b4c;
+     -fx-fill: #ff3b4c;
+ }

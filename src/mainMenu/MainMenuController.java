@@ -29,18 +29,4 @@ public class MainMenuController {
             e.printStackTrace();
         }
     }
-
-    public void back(ActionEvent event) {
-        try {
-            Windows.changeScene(event, "../mainMenu/MainMenu.fxml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void gamePlayer(ActionEvent event) {
-    }
-
-    public void gameComputer(ActionEvent event) {
-    }
 }
