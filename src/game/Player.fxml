@@ -1,41 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.shape.Circle?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" stylesheets="@../functions/loyout.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.PlayerController">
-   <children>
-      <JFXTextField prefHeight="0.0" prefWidth="0.0" />
-      <AnchorPane prefHeight="600.0" prefWidth="200.0" styleClass="chat-background" stylesheets="@../functions/loyout.css" AnchorPane.rightAnchor="0.0">
+<AnchorPane fx:id="mainWindow" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../functions/loyout.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.PlayerController">
+    <children>
+        <ImageView fitHeight="600.0" fitWidth="999.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/boisko.png" />
+            </image>
+        </ImageView>
+        <JFXTextField alignment="CENTER" editable="false" labelFloat="true" layoutX="304.0" layoutY="51.0" styleClass="gracz_aktywny" stylesheets="@../functions/loyout.css" text="Gracz 1">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor></JFXTextField>
+        <JFXTextField alignment="CENTER" cache="true" editable="false" layoutX="561.0" layoutY="51.0" styleClass="wiadomosc" stylesheets="@../functions/loyout.css" text="Gracz 2">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </JFXTextField>
+      <AnchorPane fx:id="mainGame" layoutX="296.0" layoutY="40.0">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/czat.png" />
-               </image>
-            </ImageView>
-            <Line endY="600.0" fill="WHITE" smooth="false" stroke="WHITE" strokeLineCap="BUTT" strokeLineJoin="BEVEL" />
-            <Line endX="200.0" endY="50.0" startX="1.0" startY="50.0" stroke="WHITE" />
-            <JFXTextField alignment="CENTER" layoutX="1.0" layoutY="522.0" prefHeight="25.0" prefWidth="200.0" promptText="Napisz wiadomość" styleClass="wiadomosc" stylesheets="@../functions/loyout.css" />
-            <JFXButton layoutX="77.0" layoutY="561.0" text="Wyślij" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="88.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="54.0" layoutY="88.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="4.0" layoutY="88.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="88.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="88.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="255.0" layoutY="88.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="305.0" layoutY="88.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="88.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="402.0" layoutY="88.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="45.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="54.0" layoutY="45.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="45.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="45.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="255.0" layoutY="45.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="305.0" layoutY="45.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="45.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="131.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="54.0" layoutY="131.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="4.0" layoutY="131.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="131.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="131.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="255.0" layoutY="131.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="305.0" layoutY="131.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="131.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="402.0" layoutY="131.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="175.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="54.0" layoutY="175.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="4.0" layoutY="175.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="175.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="175.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="255.0" layoutY="175.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="305.0" layoutY="175.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="175.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="402.0" layoutY="175.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="104.0" layoutY="217.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="53.0" layoutY="217.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="3.0" layoutY="217.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point17" fill="#ff981f" layoutX="153.0" layoutY="217.0" onMouseClicked="#Point17Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point10" fill="#ff981f" layoutX="204.0" layoutY="217.0" onMouseClicked="#Point10Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point11" fill="#ff981f" layoutX="254.0" layoutY="217.0" onMouseClicked="#Point11Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point19" fill="#ff981f" layoutX="304.0" layoutY="217.0" onMouseClicked="#Point19Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="354.0" layoutY="217.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="401.0" layoutY="217.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point00" fill="#ff981f" layoutX="204.0" layoutY="259.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="point_20" fill="#ff981f" layoutX="104.0" layoutY="259.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="point_30" fill="#ff981f" layoutX="53.0" layoutY="259.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="point_40" fill="#ff981f" layoutX="3.0" layoutY="259.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point16" fill="#ff981f" layoutX="153.0" layoutY="259.0" onMouseClicked="#Point16Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point12" fill="#ff981f" layoutX="254.0" layoutY="259.0" onMouseClicked="#Point12Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point18" fill="#ff981f" layoutX="304.0" layoutY="259.0" onMouseClicked="#Point18Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="point30" fill="#ff981f" layoutX="354.0" layoutY="259.0" onMouseClicked="#ClickPoint30" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="point40" fill="#ff981f" layoutX="401.0" layoutY="259.0" onMouseClicked="#ClickPoint40" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="303.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="54.0" layoutY="303.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="4.0" layoutY="303.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point15" fill="#ff981f" layoutX="154.0" layoutY="303.0" onMouseClicked="#Point15Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point14" fill="#ff981f" layoutX="204.0" layoutY="303.0" onMouseClicked="#Point14Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point13" fill="#ff981f" layoutX="255.0" layoutY="303.0" onMouseClicked="#Point13Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point20" fill="#ff981f" layoutX="305.0" layoutY="303.0" onMouseClicked="#Point20Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="303.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="402.0" layoutY="303.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="347.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="54.0" layoutY="347.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="4.0" layoutY="347.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="347.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="347.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="255.0" layoutY="347.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="305.0" layoutY="347.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="347.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="402.0" layoutY="347.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="389.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="54.0" layoutY="389.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="4.0" layoutY="389.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="389.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="389.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="255.0" layoutY="389.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="305.0" layoutY="389.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="389.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="402.0" layoutY="389.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="432.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="54.0" layoutY="432.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="4.0" layoutY="432.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="432.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="432.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="255.0" layoutY="432.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="305.0" layoutY="432.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="432.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="402.0" layoutY="432.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="252.0" layoutY="3.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="205.0" layoutY="3.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="3.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="104.0" layoutY="475.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="53.0" layoutY="475.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="153.0" layoutY="475.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="475.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="254.0" layoutY="475.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="304.0" layoutY="475.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="354.0" layoutY="475.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="600.0" fitWidth="999.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/boisko.png" />
-         </image>
-      </ImageView>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <JFXTextField alignment="CENTER" cache="true" editable="false" focusTraversable="false" layoutX="304.0" layoutY="51.0" pickOnBounds="false" styleClass="gracz_aktywny" stylesheets="@../functions/loyout.css" text="Gracz 1" />
-      <JFXTextField alignment="CENTER" cache="true" editable="false" layoutX="561.0" layoutY="51.0" pickOnBounds="false" styleClass="wiadomosc" stylesheets="@../functions/loyout.css" text="Gracz 2">
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </JFXTextField>
-   </children>
+      <Circle fill="#ff981f" layoutX="549.0" layoutY="558.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ff981f" layoutX="501.0" layoutY="559.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ff981f" layoutX="450.0" layoutY="558.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+    </children>
 </AnchorPane>
