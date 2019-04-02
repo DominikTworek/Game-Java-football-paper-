@@ -42,6 +42,12 @@
     -jfx-unfocus-color: radial-gradient(focus-distance 0%, center 50% 50%, radius 40%, #8eff48, #3c3c3c);
 }
 
+.gracz_aktywny2 {
+    -fx-text-fill: -fx-glownytekst;
+    -jfx-focus-color: radial-gradient(focus-distance 0%, center 50% 50%, radius 40%, #0efffc, #3c3c3c);;
+    -jfx-unfocus-color: radial-gradient(focus-distance 0%, center 50% 50%, radius 40%, #00fffa, #3c3c3c);
+}
+
 .wiadomosc {
     -fx-text-fill: -fx-glownytekst;
     -jfx-focus-color: radial-gradient(focus-distance 0%, center 50% 50%, radius 40%, #ff7b1f, #3c3c3c);;

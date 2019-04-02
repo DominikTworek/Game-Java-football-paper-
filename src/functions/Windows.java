@@ -16,6 +16,7 @@ public class Windows {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(NewScene));
         stage.show();
+
     }
 }
 
