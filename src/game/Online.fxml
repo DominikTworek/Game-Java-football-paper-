@@ -23,6 +23,10 @@
             <Line endX="200.0" endY="50.0" startX="1.0" startY="50.0" stroke="WHITE" />
             <JFXTextField alignment="CENTER" layoutX="1.0" layoutY="522.0" prefHeight="25.0" prefWidth="200.0" promptText="Napisz wiadomość" styleClass="wiadomosc" stylesheets="@../functions/loyout.css" />
             <JFXButton layoutX="77.0" layoutY="561.0" text="Wyślij" />
+            <Text fill="#2fff00" layoutX="14.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gracz 1:" />
+            <Text layoutX="59.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Witam" />
+            <Text fill="#ff8400" layoutX="14.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gracz 2:" />
+            <Text layoutX="59.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Witam" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="600.0" fitWidth="999.0" pickOnBounds="true" preserveRatio="true">

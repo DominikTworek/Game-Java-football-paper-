@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@../functions/loyout.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.NickNameController">
+   <children>
+      <JFXTextField fx:id="player1" alignment="CENTER" layoutX="310.0" layoutY="150.0" styleClass="gracz_aktywny2" stylesheets="@../functions/loyout.css" text="Player 1" />
+      <JFXTextField fx:id="player2" alignment="CENTER" layoutX="592.0" layoutY="150.0" styleClass="gracz_aktywny2" text="Player 2" />
+      <Text layoutX="377.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wpisz Nicki Graczy">
+         <font>
+            <Font size="34.0" />
+         </font>
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#00b2e0" />
+                  <Stop color="#0074ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Text>
+      <JFXButton layoutX="484.0" layoutY="211.0" onAction="#startGame" text="Zatwierdź" />
+   </children>
+</AnchorPane>

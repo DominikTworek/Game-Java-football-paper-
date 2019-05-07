@@ -27,7 +27,7 @@ public class StartGameController implements Initializable {
     @FXML
     void gamePlayer(ActionEvent event) {
         try {
-            Windows.changeScene(event, "../game/Player.fxml");
+            Windows.changeScene(event, "../game/NickName.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -25,115 +25,212 @@
                 <Image url="@../resources/boisko.png" />
             </image>
         </ImageView>
-        <JFXTextField alignment="CENTER" editable="false" labelFloat="true" layoutX="304.0" layoutY="51.0" styleClass="gracz_aktywny" stylesheets="@../functions/loyout.css" text="Gracz 1">
+        <JFXTextField fx:id="player1_name" alignment="CENTER" editable="false" labelFloat="true" layoutX="304.0" layoutY="51.0" styleClass="gracz_aktywny" stylesheets="@../functions/loyout.css" text="Gracz 1">
             <cursor>
                 <Cursor fx:constant="DEFAULT" />
             </cursor>
       </JFXTextField>
-        <JFXTextField alignment="CENTER" cache="true" editable="false" layoutX="561.0" layoutY="51.0" styleClass="gracz_aktywny2" stylesheets="@../functions/loyout.css" text="Gracz 2">
+        <JFXTextField fx:id="player2_name" alignment="CENTER" cache="true" editable="false" layoutX="561.0" layoutY="51.0" styleClass="gracz_aktywny2" stylesheets="@../functions/loyout.css" text="Gracz 2">
             <cursor>
                 <Cursor fx:constant="DEFAULT" />
             </cursor>
         </JFXTextField>
       <AnchorPane fx:id="mainGame" layoutX="296.0" layoutY="40.0" prefHeight="523.0" prefWidth="405.0">
          <children>
-            <Circle fx:id="Point32" fill="#ff981f" layoutX="105.0" layoutY="88.0" onMouseClicked="#Point32Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point22" fill="#ff981f" layoutX="54.0" layoutY="88.0" onMouseClicked="#Point22Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point12" fill="#ff981f" layoutX="4.0" layoutY="88.0" onMouseClicked="#Point12Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point42" fill="#ff981f" layoutX="154.0" layoutY="88.0" onMouseClicked="#Point42Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point52" fill="#ff981f" layoutX="204.0" layoutY="88.0" onMouseClicked="#Point52Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point62" fill="#ff981f" layoutX="255.0" layoutY="88.0" onMouseClicked="#Point62Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point72" fill="#ff981f" layoutX="305.0" layoutY="88.0" onMouseClicked="#Point72Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point82" fill="#ff981f" layoutX="355.0" layoutY="88.0" onMouseClicked="#Point82Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point92" fill="#ff981f" layoutX="402.0" layoutY="88.0" onMouseClicked="#Point92Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point31" fill="#ff981f" layoutX="105.0" layoutY="45.0" onMouseClicked="#Point31Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point21" fill="#ff981f" layoutX="54.0" layoutY="45.0" onMouseClicked="#Point21Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point41" fill="#ff981f" layoutX="154.0" layoutY="45.0" onMouseClicked="#Point41Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point51" fill="#ff981f" layoutX="204.0" layoutY="45.0" onMouseClicked="#Point51Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point61" fill="#ff981f" layoutX="255.0" layoutY="45.0" onMouseClicked="#Point61Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point71" fill="#ff981f" layoutX="305.0" layoutY="45.0" onMouseClicked="#Point71Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point81" fill="#ff981f" layoutX="355.0" layoutY="45.0" onMouseClicked="#Point81Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point33" fill="#ff981f" layoutX="105.0" layoutY="131.0" onMouseClicked="#Point33Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point23" fill="#ff981f" layoutX="54.0" layoutY="131.0" onMouseClicked="#Point23Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point13" fill="#ff981f" layoutX="4.0" layoutY="131.0" onMouseClicked="#Point13Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point43" fill="#ff981f" layoutX="154.0" layoutY="131.0" onMouseClicked="#Point43Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point53" fill="#ff981f" layoutX="204.0" layoutY="131.0" onMouseClicked="#Point53Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point63" fill="#ff981f" layoutX="255.0" layoutY="131.0" onMouseClicked="#Point63Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point73" fill="#ff981f" layoutX="305.0" layoutY="131.0" onMouseClicked="#Point73Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point83" fill="#ff981f" layoutX="355.0" layoutY="131.0" onMouseClicked="#Point83Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point93" fill="#ff981f" layoutX="402.0" layoutY="131.0" onMouseClicked="#Point93Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point34" fill="#ff981f" layoutX="105.0" layoutY="175.0" onMouseClicked="#Point34Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point24" fill="#ff981f" layoutX="54.0" layoutY="175.0" onMouseClicked="#Point24Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point14" fill="#ff981f" layoutX="4.0" layoutY="175.0" onMouseClicked="#Point14Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point44" fill="#ff981f" layoutX="154.0" layoutY="175.0" onMouseClicked="#Point44Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="171.0" />
-            <Circle fx:id="Point54" fill="#ff981f" layoutX="204.0" layoutY="175.0" onMouseClicked="#Point54Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.topAnchor="171.0" />
-            <Circle fx:id="Point64" fill="#ff981f" layoutX="255.0" layoutY="175.0" onMouseClicked="#Point64Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point74" fill="#ff981f" layoutX="305.0" layoutY="175.0" onMouseClicked="#Point74Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point84" fill="#ff981f" layoutX="355.0" layoutY="175.0" onMouseClicked="#Point84Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point94" fill="#ff981f" layoutX="402.0" layoutY="175.0" onMouseClicked="#Point94Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point35" fill="#ff981f" layoutX="104.0" layoutY="217.0" onMouseClicked="#Point35Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point25" fill="#ff981f" layoutX="53.0" layoutY="217.0" onMouseClicked="#Point25Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point15" fill="#ff981f" layoutX="3.0" layoutY="217.0" onMouseClicked="#Point15Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point45" fill="#ff981f" layoutX="153.0" layoutY="217.0" onMouseClicked="#Point45Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="149.0" />
-            <Circle fx:id="Point55" fill="#ff981f" layoutX="204.0" layoutY="217.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="213.0" />
-            <Circle fx:id="Point65" fill="#ff981f" layoutX="254.0" layoutY="217.0" onMouseClicked="#Point65Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point75" fill="#ff981f" layoutX="304.0" layoutY="217.0" onMouseClicked="#Point75Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point85" fill="#ff981f" layoutX="354.0" layoutY="217.0" onMouseClicked="#Point85Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point95" fill="#ff981f" layoutX="401.0" layoutY="217.0" onMouseClicked="#Point95Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+            <AnchorPane fx:id="test" prefHeight="523.0" prefWidth="405.0" />
+            <Circle fx:id="Point451" fill="#ff981f" layoutX="154.0" layoutY="217.0" onMouseClicked="#Point45Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point551" fill="#ff981f" layoutX="204.0" layoutY="217.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point65111" fill="#ff981f" layoutX="355.0" layoutY="217.0" onMouseClicked="#Point65Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point6511" fill="#ff981f" layoutX="305.0" layoutY="217.0" onMouseClicked="#Point65Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point651111" fill="#ff981f" layoutX="402.0" layoutY="217.0" onMouseClicked="#Point65Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point651" fill="#ff981f" layoutX="255.0" layoutY="217.0" onMouseClicked="#Point65Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="518.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point5511211111117" fill="#ff981f" layoutX="355.0" layoutY="88.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point5511211111118" fill="#ff981f" layoutX="355.0" layoutY="131.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="175.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point5511211111119" fill="#ff981f" layoutX="402.0" layoutY="88.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111110" fill="#ff981f" layoutX="402.0" layoutY="131.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111112" fill="#ff981f" layoutX="402.0" layoutY="175.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="4.0" layoutY="259.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111113" fill="#ff981f" layoutX="53.0" layoutY="259.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111114" fill="#ff981f" layoutX="105.0" layoutY="259.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111115" fill="#ff981f" layoutX="154.0" layoutY="259.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111116" fill="#ff981f" layoutX="255.0" layoutY="259.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111117" fill="#ff981f" layoutX="304.0" layoutY="259.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111118" fill="#ff981f" layoutX="355.0" layoutY="259.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111119" fill="#ff981f" layoutX="402.0" layoutY="259.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111120" fill="#ff981f" layoutX="4.0" layoutY="303.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111121" fill="#ff981f" layoutX="53.0" layoutY="303.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111122" fill="#ff981f" layoutX="105.0" layoutY="303.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111123" fill="#ff981f" layoutX="154.0" layoutY="303.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="303.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111124" fill="#ff981f" layoutX="255.0" layoutY="303.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111125" fill="#ff981f" layoutX="304.0" layoutY="303.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="303.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="402.0" layoutY="303.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111126" fill="#ff981f" layoutX="4.0" layoutY="347.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111127" fill="#ff981f" layoutX="53.0" layoutY="347.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111128" fill="#ff981f" layoutX="105.0" layoutY="347.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111129" fill="#ff981f" layoutX="154.0" layoutY="347.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="347.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="255.0" layoutY="347.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111130" fill="#ff981f" layoutX="304.0" layoutY="347.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111131" fill="#ff981f" layoutX="355.0" layoutY="347.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111132" fill="#ff981f" layoutX="402.0" layoutY="347.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111133" fill="#ff981f" layoutX="4.0" layoutY="389.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="53.0" layoutY="389.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="4.0" layoutY="436.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="53.0" layoutY="432.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="53.0" layoutY="475.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="389.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="432.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="475.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="389.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="432.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="475.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="389.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="432.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="475.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="255.0" layoutY="389.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="255.0" layoutY="432.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="255.0" layoutY="475.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="304.0" layoutY="389.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="305.0" layoutY="432.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="305.0" layoutY="475.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="475.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="432.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="355.0" layoutY="389.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="402.0" layoutY="389.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="402.0" layoutY="432.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point5511211111113" fill="#ff981f" layoutX="305.0" layoutY="88.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point5511211111114" fill="#ff981f" layoutX="305.0" layoutY="131.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point5511211111115" fill="#ff981f" layoutX="305.0" layoutY="175.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point5511211111116" fill="#ff981f" layoutX="355.0" layoutY="45.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point5511211111112" fill="#ff981f" layoutX="255.0" layoutY="175.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="45.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55111111" fill="#ff981f" layoutX="204.0" layoutY="3.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="305.0" layoutY="45.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111111" fill="#ff981f" layoutX="255.0" layoutY="131.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point5511211111111" fill="#ff981f" layoutX="255.0" layoutY="88.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111111" fill="#ff981f" layoutX="4.0" layoutY="217.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="45.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="53.0" layoutY="45.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="4.0" layoutY="88.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="53.0" layoutY="88.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="88.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="88.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="4.0" layoutY="131.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="53.0" layoutY="131.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="131.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="131.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="4.0" layoutY="175.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="53.0" layoutY="175.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55112111" fill="#ff981f" layoutX="53.0" layoutY="217.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="217.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="105.0" layoutY="175.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="154.0" layoutY="175.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point5511111" fill="#ff981f" layoutX="204.0" layoutY="45.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="88.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="131.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="175.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point551121111111" fill="#ff981f" layoutX="255.0" layoutY="45.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ff981f" layoutX="204.0" layoutY="517.0" onMouseClicked="#Bramka2Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point32" fill="#ff981f" layoutX="105.0" layoutY="88.0" onMouseClicked="#Point32Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point22" fill="#ff981f" layoutX="54.0" layoutY="88.0" onMouseClicked="#Point22Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point12" fill="#ff981f" layoutX="4.0" layoutY="88.0" onMouseClicked="#Point12Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point42" fill="#ff981f" layoutX="154.0" layoutY="88.0" onMouseClicked="#Point42Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point52" fill="#ff981f" layoutX="204.0" layoutY="88.0" onMouseClicked="#Point52Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point62" fill="#ff981f" layoutX="255.0" layoutY="88.0" onMouseClicked="#Point62Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point72" fill="#ff981f" layoutX="305.0" layoutY="88.0" onMouseClicked="#Point72Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point82" fill="#ff981f" layoutX="355.0" layoutY="88.0" onMouseClicked="#Point82Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point92" fill="#ff981f" layoutX="402.0" layoutY="88.0" onMouseClicked="#Point92Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point31" fill="#ff981f" layoutX="105.0" layoutY="45.0" onMouseClicked="#Point31Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point21" fill="#ff981f" layoutX="54.0" layoutY="45.0" onMouseClicked="#Point21Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point41" fill="#ff981f" layoutX="154.0" layoutY="45.0" onMouseClicked="#Point41Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point51" fill="#ff981f" layoutX="204.0" layoutY="45.0" onMouseClicked="#Point51Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point61" fill="#ff981f" layoutX="255.0" layoutY="45.0" onMouseClicked="#Point61Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point71" fill="#ff981f" layoutX="305.0" layoutY="45.0" onMouseClicked="#Point71Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point81" fill="#ff981f" layoutX="355.0" layoutY="45.0" onMouseClicked="#Point81Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point33" fill="#ff981f" layoutX="105.0" layoutY="131.0" onMouseClicked="#Point33Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point23" fill="#ff981f" layoutX="54.0" layoutY="131.0" onMouseClicked="#Point23Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point13" fill="#ff981f" layoutX="4.0" layoutY="131.0" onMouseClicked="#Point13Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point43" fill="#ff981f" layoutX="154.0" layoutY="131.0" onMouseClicked="#Point43Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point53" fill="#ff981f" layoutX="204.0" layoutY="131.0" onMouseClicked="#Point53Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point63" fill="#ff981f" layoutX="255.0" layoutY="131.0" onMouseClicked="#Point63Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point73" fill="#ff981f" layoutX="305.0" layoutY="131.0" onMouseClicked="#Point73Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point83" fill="#ff981f" layoutX="355.0" layoutY="131.0" onMouseClicked="#Point83Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point93" fill="#ff981f" layoutX="402.0" layoutY="131.0" onMouseClicked="#Point93Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point34" fill="#ff981f" layoutX="105.0" layoutY="175.0" onMouseClicked="#Point34Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point24" fill="#ff981f" layoutX="54.0" layoutY="175.0" onMouseClicked="#Point24Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point14" fill="#ff981f" layoutX="4.0" layoutY="175.0" onMouseClicked="#Point14Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point44" fill="#ff981f" layoutX="154.0" layoutY="175.0" onMouseClicked="#Point44Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point54" fill="#ff981f" layoutX="204.0" layoutY="175.0" onMouseClicked="#Point54Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point64" fill="#ff981f" layoutX="255.0" layoutY="175.0" onMouseClicked="#Point64Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point74" fill="#ff981f" layoutX="305.0" layoutY="175.0" onMouseClicked="#Point74Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point84" fill="#ff981f" layoutX="355.0" layoutY="175.0" onMouseClicked="#Point84Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point94" fill="#ff981f" layoutX="402.0" layoutY="175.0" onMouseClicked="#Point94Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point35" fill="#ff981f" layoutX="104.0" layoutY="217.0" onMouseClicked="#Point35Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point25" fill="#ff981f" layoutX="53.0" layoutY="217.0" onMouseClicked="#Point25Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point15" fill="#ff981f" layoutX="3.0" layoutY="217.0" onMouseClicked="#Point15Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point45" fill="#ff981f" layoutX="153.0" layoutY="217.0" onMouseClicked="#Point45Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point55" fill="#ff981f" layoutX="204.0" layoutY="217.0" onMouseClicked="#Point55Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point65" fill="#ff981f" layoutX="255.0" layoutY="217.0" onMouseClicked="#Point65Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point75" fill="#ff981f" layoutX="304.0" layoutY="217.0" onMouseClicked="#Point75Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point85" fill="#ff981f" layoutX="354.0" layoutY="217.0" onMouseClicked="#Point85Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point95" fill="#ff981f" layoutX="401.0" layoutY="217.0" onMouseClicked="#Point95Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="Point56" fill="#ff981f" layoutX="204.0" layoutY="259.0" onMouseClicked="#Point56Click" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point36" fill="#ff981f" layoutX="104.0" layoutY="259.0" onMouseClicked="#Point36Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point26" fill="#ff981f" layoutX="53.0" layoutY="259.0" onMouseClicked="#Point26Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point16" fill="#ff981f" layoutX="3.0" layoutY="259.0" onMouseClicked="#Point16Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point46" fill="#ff981f" layoutX="153.0" layoutY="259.0" onMouseClicked="#Point46Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point66" fill="#ff981f" layoutX="254.0" layoutY="259.0" onMouseClicked="#Point66Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point76" fill="#ff981f" layoutX="304.0" layoutY="259.0" onMouseClicked="#Point76Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point86" fill="#ff981f" layoutX="354.0" layoutY="259.0" onMouseClicked="#Point86Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point96" fill="#ff981f" layoutX="401.0" layoutY="259.0" onMouseClicked="#Point96Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point37" fill="#ff981f" layoutX="105.0" layoutY="303.0" onMouseClicked="#Point37Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point27" fill="#ff981f" layoutX="54.0" layoutY="303.0" onMouseClicked="#Point27Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point17" fill="#ff981f" layoutX="4.0" layoutY="303.0" onMouseClicked="#Point17Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point47" fill="#ff981f" layoutX="154.0" layoutY="303.0" onMouseClicked="#Point47Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point57" fill="#ff981f" layoutX="204.0" layoutY="303.0" onMouseClicked="#Point57Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point67" fill="#ff981f" layoutX="255.0" layoutY="303.0" onMouseClicked="#Point67Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point77" fill="#ff981f" layoutX="305.0" layoutY="303.0" onMouseClicked="#Point77Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point87" fill="#ff981f" layoutX="355.0" layoutY="303.0" onMouseClicked="#Point87Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point97" fill="#ff981f" layoutX="402.0" layoutY="303.0" onMouseClicked="#Point97Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point38" fill="#ff981f" layoutX="105.0" layoutY="347.0" onMouseClicked="#Point38Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point28" fill="#ff981f" layoutX="54.0" layoutY="347.0" onMouseClicked="#Point28Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point18" fill="#ff981f" layoutX="4.0" layoutY="347.0" onMouseClicked="#Point18Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point48" fill="#ff981f" layoutX="154.0" layoutY="347.0" onMouseClicked="#Point48Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point58" fill="#ff981f" layoutX="204.0" layoutY="347.0" onMouseClicked="#Point58Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point68" fill="#ff981f" layoutX="255.0" layoutY="347.0" onMouseClicked="#Point68Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point78" fill="#ff981f" layoutX="305.0" layoutY="347.0" onMouseClicked="#Point78Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point88" fill="#ff981f" layoutX="355.0" layoutY="347.0" onMouseClicked="#Point88Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point98" fill="#ff981f" layoutX="402.0" layoutY="347.0" onMouseClicked="#Point98Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point39" fill="#ff981f" layoutX="105.0" layoutY="389.0" onMouseClicked="#Point39Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point29" fill="#ff981f" layoutX="54.0" layoutY="389.0" onMouseClicked="#Point29Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point19" fill="#ff981f" layoutX="4.0" layoutY="389.0" onMouseClicked="#Point19Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point49" fill="#ff981f" layoutX="154.0" layoutY="389.0" onMouseClicked="#Point49Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point59" fill="#ff981f" layoutX="204.0" layoutY="389.0" onMouseClicked="#Point59Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point69" fill="#ff981f" layoutX="255.0" layoutY="389.0" onMouseClicked="#Point69Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point79" fill="#ff981f" layoutX="305.0" layoutY="389.0" onMouseClicked="#Point79Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point89" fill="#ff981f" layoutX="355.0" layoutY="389.0" onMouseClicked="#Point89Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point99" fill="#ff981f" layoutX="402.0" layoutY="389.0" onMouseClicked="#Point99Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point310" fill="#ff981f" layoutX="105.0" layoutY="432.0" onMouseClicked="#Point310Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point210" fill="#ff981f" layoutX="54.0" layoutY="432.0" onMouseClicked="#Point210Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point110" fill="#ff981f" layoutX="4.0" layoutY="432.0" onMouseClicked="#Point110Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point410" fill="#ff981f" layoutX="154.0" layoutY="432.0" onMouseClicked="#Point410Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point510" fill="#ff981f" layoutX="204.0" layoutY="432.0" onMouseClicked="#Point510Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point610" fill="#ff981f" layoutX="255.0" layoutY="432.0" onMouseClicked="#Point610Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point710" fill="#ff981f" layoutX="305.0" layoutY="432.0" onMouseClicked="#Point710Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point810" fill="#ff981f" layoutX="355.0" layoutY="432.0" onMouseClicked="#Point810Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point910" fill="#ff981f" layoutX="402.0" layoutY="432.0" onMouseClicked="#Point910Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Bramka1" fill="#ff981f" layoutX="205.0" layoutY="3.0" onMouseClicked="#Bramka1Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point311" fill="#ff981f" layoutX="104.0" layoutY="475.0" onMouseClicked="#Point311Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point211" fill="#ff981f" layoutX="53.0" layoutY="475.0" onMouseClicked="#Point211Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point411" fill="#ff981f" layoutX="153.0" layoutY="475.0" onMouseClicked="#Point411Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point511" fill="#ff981f" layoutX="204.0" layoutY="475.0" onMouseClicked="#Point511Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point611" fill="#ff981f" layoutX="254.0" layoutY="475.0" onMouseClicked="#Point611Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point711" fill="#ff981f" layoutX="304.0" layoutY="475.0" onMouseClicked="#Point711Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Point811" fill="#ff981f" layoutX="354.0" layoutY="475.0" onMouseClicked="#Point811Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="Bramka2" fill="#ff981f" onMouseClicked="#Bramka2Click" radius="3.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="202.0" AnchorPane.topAnchor="515.0" />
+            <Circle fx:id="Point36" fill="#ff981f" layoutX="104.0" layoutY="259.0" onMouseClicked="#Point36Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point26" fill="#ff981f" layoutX="53.0" layoutY="259.0" onMouseClicked="#Point26Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point16" fill="#ff981f" layoutX="3.0" layoutY="259.0" onMouseClicked="#Point16Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point46" fill="#ff981f" layoutX="153.0" layoutY="259.0" onMouseClicked="#Point46Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point66" fill="#ff981f" layoutX="255.0" layoutY="259.0" onMouseClicked="#Point66Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point76" fill="#ff981f" layoutX="304.0" layoutY="259.0" onMouseClicked="#Point76Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point86" fill="#ff981f" layoutX="354.0" layoutY="259.0" onMouseClicked="#Point86Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point96" fill="#ff981f" layoutX="402.0" layoutY="259.0" onMouseClicked="#Point96Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point37" fill="#ff981f" layoutX="105.0" layoutY="303.0" onMouseClicked="#Point37Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point27" fill="#ff981f" layoutX="54.0" layoutY="303.0" onMouseClicked="#Point27Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point17" fill="#ff981f" layoutX="4.0" layoutY="303.0" onMouseClicked="#Point17Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point47" fill="#ff981f" layoutX="154.0" layoutY="303.0" onMouseClicked="#Point47Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point57" fill="#ff981f" layoutX="204.0" layoutY="303.0" onMouseClicked="#Point57Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point67" fill="#ff981f" layoutX="255.0" layoutY="303.0" onMouseClicked="#Point67Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point77" fill="#ff981f" layoutX="305.0" layoutY="303.0" onMouseClicked="#Point77Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point87" fill="#ff981f" layoutX="355.0" layoutY="303.0" onMouseClicked="#Point87Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point97" fill="#ff981f" layoutX="402.0" layoutY="303.0" onMouseClicked="#Point97Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point38" fill="#ff981f" layoutX="105.0" layoutY="347.0" onMouseClicked="#Point38Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point28" fill="#ff981f" layoutX="54.0" layoutY="347.0" onMouseClicked="#Point28Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point18" fill="#ff981f" layoutX="4.0" layoutY="347.0" onMouseClicked="#Point18Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point48" fill="#ff981f" layoutX="154.0" layoutY="347.0" onMouseClicked="#Point48Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point58" fill="#ff981f" layoutX="204.0" layoutY="347.0" onMouseClicked="#Point58Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point68" fill="#ff981f" layoutX="255.0" layoutY="347.0" onMouseClicked="#Point68Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point78" fill="#ff981f" layoutX="305.0" layoutY="347.0" onMouseClicked="#Point78Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point88" fill="#ff981f" layoutX="355.0" layoutY="347.0" onMouseClicked="#Point88Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point98" fill="#ff981f" layoutX="402.0" layoutY="347.0" onMouseClicked="#Point98Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point39" fill="#ff981f" layoutX="105.0" layoutY="389.0" onMouseClicked="#Point39Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point29" fill="#ff981f" layoutX="54.0" layoutY="389.0" onMouseClicked="#Point29Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point19" fill="#ff981f" layoutX="4.0" layoutY="389.0" onMouseClicked="#Point19Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point49" fill="#ff981f" layoutX="154.0" layoutY="389.0" onMouseClicked="#Point49Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point59" fill="#ff981f" layoutX="204.0" layoutY="389.0" onMouseClicked="#Point59Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point69" fill="#ff981f" layoutX="255.0" layoutY="389.0" onMouseClicked="#Point69Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point79" fill="#ff981f" layoutX="305.0" layoutY="389.0" onMouseClicked="#Point79Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point89" fill="#ff981f" layoutX="355.0" layoutY="389.0" onMouseClicked="#Point89Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point99" fill="#ff981f" layoutX="402.0" layoutY="389.0" onMouseClicked="#Point99Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point310" fill="#ff981f" layoutX="105.0" layoutY="432.0" onMouseClicked="#Point310Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point210" fill="#ff981f" layoutX="54.0" layoutY="432.0" onMouseClicked="#Point210Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point110" fill="#ff981f" layoutX="4.0" layoutY="432.0" onMouseClicked="#Point110Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point410" fill="#ff981f" layoutX="154.0" layoutY="432.0" onMouseClicked="#Point410Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point510" fill="#ff981f" layoutX="204.0" layoutY="432.0" onMouseClicked="#Point510Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point610" fill="#ff981f" layoutX="255.0" layoutY="432.0" onMouseClicked="#Point610Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point710" fill="#ff981f" layoutX="305.0" layoutY="432.0" onMouseClicked="#Point710Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point810" fill="#ff981f" layoutX="355.0" layoutY="432.0" onMouseClicked="#Point810Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point910" fill="#ff981f" layoutX="402.0" layoutY="432.0" onMouseClicked="#Point910Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Bramka1" fill="#ff981f" layoutX="205.0" layoutY="3.0" onMouseClicked="#Bramka1Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point311" fill="#ff981f" layoutX="104.0" layoutY="475.0" onMouseClicked="#Point311Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point211" fill="#ff981f" layoutX="53.0" layoutY="475.0" onMouseClicked="#Point211Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point411" fill="#ff981f" layoutX="153.0" layoutY="475.0" onMouseClicked="#Point411Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point511" fill="#ff981f" layoutX="204.0" layoutY="475.0" onMouseClicked="#Point511Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point611" fill="#ff981f" layoutX="255.0" layoutY="475.0" onMouseClicked="#Point611Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point711" fill="#ff981f" layoutX="304.0" layoutY="475.0" onMouseClicked="#Point711Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="Point811" fill="#ff981f" layoutX="354.0" layoutY="475.0" onMouseClicked="#Point811Click" opacity="0.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
       </AnchorPane>
     </children>

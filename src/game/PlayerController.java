@@ -1,5 +1,6 @@
 package game;
 
+import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -17,16 +18,28 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import static game.NickNameController.getPlayer1_name;
+import static game.NickNameController.getPlayer2_name;
+
 public class PlayerController implements Initializable {
 
     @FXML
     private AnchorPane mainWindow;
 
     @FXML
+    private AnchorPane test;
+
+    @FXML
     private ImageView gracz1aktywnosc;
 
     @FXML
     private ImageView gracz2aktywnosc;
+
+    @FXML
+    private JFXTextField player1_name;
+
+    @FXML
+    private JFXTextField player2_name;
 
     @FXML
     private AnchorPane mainGame;
@@ -382,6 +395,10 @@ public class PlayerController implements Initializable {
 
 
     void zmianaDostepnosci() {
+        dostepnosc(aktywnosci, dostepnosci);
+    }
+
+    static void dostepnosc(int[][] aktywnosci, int[][] dostepnosci) {
         for (int i = 1; i <= 9; i++) {
             for (int j = 1; j <= 11; j++) {
                 if (aktywnosci[i][j] == 1) {
@@ -426,12 +443,13 @@ public class PlayerController implements Initializable {
         }
     }
 
-    void drawLine(Circle circle, Circle circle2) {
+    static void line(Circle circle, Circle circle2, Boolean player1, AnchorPane mainGame) {
         Line line = new Line();
         line.setStartX(circle.getLayoutX());
         line.setStartY(circle.getLayoutY());
         line.setEndX(circle2.getLayoutX());
         line.setEndY(circle2.getLayoutY());
+        line.toBack();
         if (player1.equals(true))
             line.setStyle("-fx-stroke: #43ff04");
         else
@@ -439,7 +457,27 @@ public class PlayerController implements Initializable {
         mainGame.getChildren().add(line);
     }
 
+    void reset_gry(){
+        for(int i=0; i<= 10; i++){
+            for(int j =0; j <=12; j++){
+                aktywnosci[i][j] = 0;
+                dostepnosci[i][j] = 0;
+                odwiedzone[i][j] = 0;
+                laczenie_pionowe[i][j] = 0;
+                laczenie_poziome[i][j] = 0;
+                laczenie_skosne_lewe[i][j] = 0;
+                laczenie_skosne_prawe[i][j] = 0;
+            }
+        }
+        test.getChildren().clear();
+        ustawianie_wstepne();
+    }
+
     void drawLine2(Circle circle, int X, int Y) {
+        line2(circle, X, Y, player1, test);
+    }
+
+    static void line2(Circle circle, int X, int Y, Boolean player1, AnchorPane mainGame) {
         Line line = new Line();
         line.setStartX(circle.getLayoutX());
         line.setStartY(circle.getLayoutY());
@@ -453,12 +491,18 @@ public class PlayerController implements Initializable {
     }
 
     void alert(String Title, String Text){
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(Title);
-        alert.setHeaderText(null);
+        ButtonType buttonTypeOne = new ButtonType("Graj");
+        ButtonType buttonTypeTwo = new ButtonType("Wyjdź");
+        if(aktywnosci[5][0] == 1) {
+            alert.setHeaderText("Gratulacje!! Gracz " + getPlayer2_name() + " wygrał grę");
+        }else
+            alert.setHeaderText("Gratulacje!! Gracz " + getPlayer1_name() + " wygrał grę");
         alert.setResizable(false);
         alert.setContentText(Text);
+        alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
+
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image(this.getClass().getResource("../resources/winner.png").toString()));
         DialogPane dialogPane = alert.getDialogPane();
@@ -466,9 +510,11 @@ public class PlayerController implements Initializable {
                 getClass().getResource("../functions/loyout.css").toExternalForm());
         dialogPane.getStyleClass().add("myDialog");
         Optional<ButtonType> result = alert.showAndWait();
-        ButtonType button = result.orElse(ButtonType.CANCEL);
-
-        if (button == ButtonType.OK) {
+        ButtonType button = result.orElse(ButtonType.OK);
+        if (result.get() == buttonTypeOne) {
+            reset_gry();
+        }
+        else {
             System.exit(0);
         }
     }
@@ -1176,8 +1222,7 @@ public class PlayerController implements Initializable {
         engine_bramka2(Bramka2, 5, 12);
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    void ustawianie_wstepne(){
         aktywnosci[5][6] = 1;
         odwiedzone[5][6] = 1;
         odwiedzone[1][2] = 1;
@@ -1213,6 +1258,13 @@ public class PlayerController implements Initializable {
         zmianaDostepnosci();
         gracz1aktywnosc.setVisible(true);
         gracz2aktywnosc.setVisible(false);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        ustawianie_wstepne();
+        player1_name.setText(getPlayer1_name());
+        player2_name.setText(getPlayer2_name());
     }
 
 
