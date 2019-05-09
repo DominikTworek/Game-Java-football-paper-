@@ -6,6 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane fx:id="mainWindow" maxWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../functions/loyout.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.PlayerController">
     <children>
@@ -37,7 +38,11 @@
         </JFXTextField>
       <AnchorPane fx:id="mainGame" layoutX="296.0" layoutY="40.0" prefHeight="523.0" prefWidth="405.0">
          <children>
-            <AnchorPane fx:id="test" prefHeight="523.0" prefWidth="405.0" />
+            <AnchorPane fx:id="test" prefHeight="544.0" prefWidth="405.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#adff1f" height="36.0" layoutX="155.0" layoutY="4.0" stroke="BLACK" strokeType="INSIDE" width="97.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fd9ff" height="36.0" layoutX="155.0" layoutY="481.0" stroke="BLACK" strokeType="INSIDE" width="97.0" />
+               </children></AnchorPane>
             <Circle fx:id="Point451" fill="#ff981f" layoutX="154.0" layoutY="217.0" onMouseClicked="#Point45Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="Point551" fill="#ff981f" layoutX="204.0" layoutY="217.0" onMouseClicked="#Point55Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
             <Circle fx:id="Point65111" fill="#ff981f" layoutX="355.0" layoutY="217.0" onMouseClicked="#Point65Click" radius="4.0" stroke="BLACK" strokeType="INSIDE" />

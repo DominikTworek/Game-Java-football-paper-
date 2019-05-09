@@ -12,7 +12,7 @@
          <font>
             <Font size="15.0" />
          </font></JFXButton>
-      <JFXButton layoutX="458.0" layoutY="391.0" onAction="#clickInstruction" prefWidth="100.0" text="Instrukcja" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="385.0">
+      <JFXButton layoutX="460.0" layoutY="353.0" onAction="#clickInstruction" prefWidth="100.0" text="Instrukcja" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="353.0">
          <font>
             <Font size="15.0" />
          </font></JFXButton>
@@ -20,6 +20,11 @@
          <font>
             <Font size="15.0" />
          </font></JFXButton>
+      <JFXButton layoutX="460.0" layoutY="419.0" onAction="#clickRanking" prefWidth="100.0" text="Ranking">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
       <ImageView fitHeight="220.0" fitWidth="450.0" layoutX="288.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="275.0">
          <image>
             <Image url="@../resources/logo.png" />

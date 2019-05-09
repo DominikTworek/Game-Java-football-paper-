@@ -1,6 +1,7 @@
 package startGame;
 
 import functions.Windows;
+import game.NickNameController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,7 +19,8 @@ public class StartGameController implements Initializable {
     @FXML
     void gameComputer(ActionEvent event) {
         try {
-            Windows.changeScene(event, "../game/Computer.fxml");
+            NickNameController.setSprComputer(true);
+            Windows.changeScene(event, "../game/NickName.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -18,8 +18,12 @@ public class MainMenuController {
     }
 
     @FXML
-    void exit(ActionEvent event) {
-        System.exit(0);
+    void clickRanking(ActionEvent event) {
+        try {
+            Windows.changeScene(event, "../ranking/Ranking.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void startGame(ActionEvent event) {
@@ -28,5 +32,11 @@ public class MainMenuController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    @FXML
+    void exit(ActionEvent event) {
+        System.exit(0);
     }
 }

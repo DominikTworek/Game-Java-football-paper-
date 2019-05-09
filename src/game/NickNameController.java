@@ -4,16 +4,26 @@ import com.jfoenix.controls.JFXTextField;
 import functions.Windows;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class NickNameController {
+public class NickNameController implements Initializable {
 
     @FXML
     private JFXTextField player1;
 
     @FXML
     private JFXTextField player2;
+
+    private static Boolean sprComputer = false;
+
+    public static void setSprComputer(Boolean sprComputer) {
+        NickNameController.sprComputer = sprComputer;
+    }
+
 
     private static String player1_name;
 
@@ -44,5 +54,15 @@ public class NickNameController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if(sprComputer.equals(true)){
+            player2.setDisable(true);
+        }
+        else
+            player2.setDisable(false);
+        System.out.println(sprComputer);
     }
 }

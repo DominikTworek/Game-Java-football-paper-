@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@../functions/loyout.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ranking.RankingController">
+    <children>
+        <Text layoutX="375.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybór Rankingu">
+            <font>
+                <Font size="34.0" />
+            </font>
+            <fill>
+                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="#00b2e0" />
+                        <Stop color="#0074ff" offset="1.0" />
+                    </stops>
+                </RadialGradient>
+            </fill>
+        </Text>
+      <Text layoutX="302.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gracz VS Komputer">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#00b2e0" />
+                  <Stop color="#0074ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Text>
+      <Text layoutX="568.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gracz VS Gracz">
+         <font>
+            <Font size="17.0" />
+         </font>
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#00b2e0" />
+                  <Stop color="#0074ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Text>
+      <JFXButton layoutX="348.0" layoutY="179.0" onAction="#ComputerRanking" text="Przejdź" />
+      <JFXButton layoutX="598.0" layoutY="179.0" onAction="#PlayerRanking" text="Przejdź" />
+    </children>
+</AnchorPane>

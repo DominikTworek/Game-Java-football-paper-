@@ -496,9 +496,9 @@ public class PlayerController implements Initializable {
         ButtonType buttonTypeOne = new ButtonType("Graj");
         ButtonType buttonTypeTwo = new ButtonType("Wyjdź");
         if(aktywnosci[5][0] == 1) {
-            alert.setHeaderText("Gratulacje!! Gracz " + getPlayer2_name() + " wygrał grę");
+            alert.setHeaderText("Gratulacje!! " + getPlayer2_name() + " wygrał grę");
         }else
-            alert.setHeaderText("Gratulacje!! Gracz " + getPlayer1_name() + " wygrał grę");
+            alert.setHeaderText("Gratulacje!! " + getPlayer1_name() + " wygrał grę");
         alert.setResizable(false);
         alert.setContentText(Text);
         alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
@@ -525,10 +525,10 @@ public class PlayerController implements Initializable {
         odwiedzone[X][Y] = 1;
         zmianaDostepnosci();
         if (aktywnosci[5][0] == 1) {
-            alert("Wygrana!", "Wygrał Gracz2, Gratulacje!");
+            alert("Wygrana!", "Czy chcesz zagrać jeszcze raz?");
         }
         if (aktywnosci[5][12] == 1) {
-            alert("Wygrana!", "Wygrał Gracz1, Gratulacje!");
+            alert("Wygrana!", "Czy chcesz zagrać jeszcze raz?");
         }
     }
 

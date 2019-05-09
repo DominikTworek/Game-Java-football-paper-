@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@../functions/loyout.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ranking.RankingViewController">
+    <children>
+        <Text layoutX="469.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ranking">
+            <font>
+                <Font size="34.0" />
+            </font>
+            <fill>
+                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop color="#00b2e0" />
+                        <Stop color="#0074ff" offset="1.0" />
+                    </stops>
+                </RadialGradient>
+            </fill>
+        </Text>
+      <Text layoutX="384.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gracz VS Komputer">
+         <font>
+            <Font size="34.0" />
+         </font>
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#00b2e0" />
+                  <Stop color="#0074ff" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Text>
+      <TableView fx:id="tableta" layoutX="326.0" layoutY="137.0" prefHeight="434.0" prefWidth="407.0">
+        <columns>
+            <TableColumn fx:id="Place" prefWidth="75.0" text="Miejsce" />
+          <TableColumn fx:id="Nick" prefWidth="110.0" text="Nick" />
+          <TableColumn fx:id="Win" prefWidth="110.0" text="Ilość wygranych" />
+            <TableColumn fx:id="Game" prefWidth="110.0" text="Ilość gier" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="259.0" layoutY="288.0" onAction="#back" text="Wróć" />
+    </children>
+</AnchorPane>
