@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane fx:id="mainWindow" maxWidth="1000.0" prefHeight="600.0" prefWidth="1000.0"
+            stylesheets="@../functions/loyout.css" xmlns="http://javafx.com/javafx/9.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.ComputerTest">
+    <children>
+        <JFXTextField prefHeight="6.0" prefWidth="8.0"/>
+        <ImageView fx:id="gracz2aktywnosc" fitHeight="36.0" fitWidth="36.0" layoutX="650.0" layoutY="40.0"
+                   pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="650.0" AnchorPane.topAnchor="40.0">
+            <image>
+                <Image url="@../resources/tick.png"/>
+            </image>
+        </ImageView>
+        <ImageView fx:id="gracz1aktywnosc" fitHeight="36.0" fitWidth="36.0" layoutX="390.0" layoutY="40.0"
+                   pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="390.0" AnchorPane.topAnchor="40.0">
+            <image>
+                <Image url="@../resources/tick.png"/>
+            </image>
+        </ImageView>
+        <ImageView pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../resources/boisko.png"/>
+            </image>
+        </ImageView>
+        <JFXTextField fx:id="player1_name" alignment="CENTER" editable="false" labelFloat="true" layoutX="304.0"
+                      layoutY="51.0" styleClass="gracz_aktywny" stylesheets="@../functions/loyout.css" text="Gracz 1">
+            <cursor>
+                <Cursor fx:constant="DEFAULT"/>
+            </cursor>
+        </JFXTextField>
+        <JFXTextField fx:id="player2_name" alignment="CENTER" cache="true" editable="false" layoutX="561.0"
+                      layoutY="51.0" styleClass="gracz_aktywny2" stylesheets="@../functions/loyout.css" text="Gracz 2">
+            <cursor>
+                <Cursor fx:constant="DEFAULT"/>
+            </cursor>
+        </JFXTextField>
+        <AnchorPane fx:id="mainGame" layoutX="296.0" layoutY="40.0" prefHeight="523.0" prefWidth="405.0">
+            <children>
+                <AnchorPane fx:id="test" prefHeight="544.0" prefWidth="405.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#adff1f" height="36.0" layoutX="155.0"
+                                   layoutY="4.0" stroke="BLACK" strokeType="INSIDE" width="97.0"/>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fd9ff" height="36.0" layoutX="155.0"
+                                   layoutY="481.0" stroke="BLACK" strokeType="INSIDE" width="97.0"/>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

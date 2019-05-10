@@ -56,6 +56,17 @@ public class NickNameController implements Initializable {
         }
     }
 
+    @FXML
+    void test(ActionEvent event) {
+        try {
+            player1_name = player1.getText();
+            player2_name = player2.getText();
+            Windows.changeScene(event, "../game/ComputerTest.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         if(sprComputer.equals(true)){
