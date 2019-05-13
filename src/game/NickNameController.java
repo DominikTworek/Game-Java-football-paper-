@@ -74,6 +74,5 @@ public class NickNameController implements Initializable {
         }
         else
             player2.setDisable(false);
-        System.out.println(sprComputer);
     }
 }

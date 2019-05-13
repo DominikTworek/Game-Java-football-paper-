@@ -11,6 +11,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 
+import java.awt.*;
+import java.awt.event.InputEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -36,6 +38,8 @@ public class ComputerTest implements Initializable {
 
      private String circleLastID = "45";
      private String circleActualID = "";
+
+     private Boolean gameStatus = true;
 
      void drawline(Circle circle, Circle circle2){
          Line line = new Line();
@@ -76,7 +80,6 @@ public class ComputerTest implements Initializable {
 
      void setTurn(Circle currentCircle, Circle lastCircle){
          String color = String.valueOf(currentCircle.getFill());
-         System.out.println(color);
          if(turnComputer.equals(true)){
              if(color.equals("0xff4500ff")){
                  turnComputer = true;
@@ -99,18 +102,48 @@ public class ComputerTest implements Initializable {
                  gracz2aktywnosc.setVisible(true);
              }
          }
-         System.out.println(turnComputer);
      }
 
-     void moveComputer(Circle currentCircle, Circle lastCircle){
-         String color = String.valueOf(currentCircle.getFill());
-         if(Integer.valueOf(currentCircle.getId()) < 40){
-            if(color
+     void computerEngine(Circle currentCircle, Circle lastCircle){
+         Integer idCR = Integer.valueOf(circleActualID) +10;
+         Circle CR = (Circle) mainGame.lookup('#'+String.valueOf(idCR));
+         int x = (int) currentCircle.getCenterX();
+         int y = (int) currentCircle.getCenterY();
+         System.out.println(x);
+         System.out.println(y);
+         String color = String.valueOf(CR.getFill());
+         if(Integer.valueOf(currentCircle.getId()) < 40) {
+             if (color.equals("0xff4500ff")) {
+                 try {
+                     Robot bot = null;
+                     bot = new Robot();
+                     bot.mouseMove(x, y);
+                     bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                     bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+                 } catch (AWTException e) {
+                     e.printStackTrace();
+                 }
+
+             }
          }
          if(Integer.valueOf(currentCircle.getId()) > 50){
 
          }
      }
+
+     void enablePoint(Circle currentCircle){
+         for(int i = 0; i <= 8; i++){
+             for(int j = 0; j <= 10; j++) {
+                 String idCircle = String.valueOf(""+i+j);
+                 Circle disableCircle = (Circle) mainGame.lookup('#'+idCircle);
+                 disableCircle.setDisable(true);
+                 int checkLeft=
+                 int c1 = Integer.parseInt(disableCircle.getId());
+                 if()
+             }
+             }
+     }
+
 
 
     void CircleEngine(){
@@ -126,14 +159,14 @@ public class ComputerTest implements Initializable {
                     @Override
                     public void handle(MouseEvent e) {
                         circleActualID = circle.getId();
-                        Circle lastCircle = (Circle) mainGame.lookup('#'+circleLastID);
                         Circle currentCircle = (Circle) mainGame.lookup('#'+circleActualID);
+                        Circle lastCircle = (Circle) mainGame.lookup('#'+circleLastID);
                         drawline(lastCircle, currentCircle);
-                        setTurn(currentCircle);
+                        setTurn(currentCircle, lastCircle);
                         circle.setFill(Color.AQUA);
                         lastCircle.setFill(Color.ORANGERED);
-                        //Integer tiePoint = Integer.valueOf(lastCircle.getId()) - Integer.valueOf(currentCircle.getId());
-                        //System.out.println(tiePoint);
+                        enablePoint(currentCircle);
+                        //computerEngine(currentCircle, lastCircle);
                         circleLastID = circle.getId();
 
                     }
