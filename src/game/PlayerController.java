@@ -716,22 +716,18 @@ public class PlayerController implements Initializable {
     void engine_bramka2(Circle circle, int X, int Y) {
         if (sprawdzenieDostepnosci(X, Y) && sprawdzenieLaczeniaPionowego(X, Y - 1) && aktywnosci[X][Y - 1] == 1) {
             aktywnosci[X][Y - 1] = 0;
-            drawLine2(circle, 0, -42);
-            drawLine2(circle, 0, -42);
+
             laczenie_pionowe[X][Y - 1] = 1;
             danePunktu(X, Y);
         }
         if (sprawdzenieDostepnosci(X, Y) && sprawdzenieLaczeniaSkosneLewe(X - 1, Y - 1) && aktywnosci[X - 1][Y - 1] == 1) {
             aktywnosci[X - 1][Y - 1] = 0;
-            drawLine2(circle, -50, -42);
-            drawLine2(circle, -50, -42);
+
             laczenie_skosne_lewe[X - 1][Y - 1] = 1;
             danePunktu(X, Y);
         }
         if (sprawdzenieDostepnosci(X, Y) && sprawdzenieLaczeniaSkosnePrawe(X, Y - 1) && aktywnosci[X + 1][Y - 1] == 1) {
             aktywnosci[X + 1][Y - 1] = 0;
-            drawLine2(circle, +50, -42);
-            drawLine2(circle, +50, -42);
             laczenie_skosne_prawe[X][Y - 1] = 1;
             danePunktu(X, Y);
         }
