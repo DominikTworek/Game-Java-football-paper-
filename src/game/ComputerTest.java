@@ -4,17 +4,26 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.DialogPane;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
+
+import static game.NickNameController.getPlayer1_name;
+import static game.NickNameController.getPlayer2_name;
 
 public class ComputerTest implements Initializable {
 
@@ -42,6 +51,45 @@ public class ComputerTest implements Initializable {
     List<String> listVisited = new ArrayList<String>();
 
     private Boolean gameStatus = true;
+
+
+    void restart_game(){
+        listVisited.clear();
+        listVisited.clear();
+        mainGame.getChildren().clear();
+        CircleEngine();
+        setStartTurn();
+    }
+
+    void alert(String Title, String Text, Boolean Computer){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(Title);
+        ButtonType buttonTypeOne = new ButtonType("Graj");
+        ButtonType buttonTypeTwo = new ButtonType("Wyjdź");
+        alert.setResizable(false);
+        alert.setContentText(Text);
+        alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
+        if(Computer){
+            alert.setHeaderText("Gratulacje!! " + getPlayer2_name() + " wygrał grę");
+        }else{
+            alert.setHeaderText("Gratulacje!! " + getPlayer1_name() + " wygrał grę");
+        }
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(this.getClass().getResource("../resources/winner.png").toString()));
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(
+                getClass().getResource("../functions/loyout.css").toExternalForm());
+        dialogPane.getStyleClass().add("myDialog");
+        Optional<ButtonType> result = alert.showAndWait();
+        ButtonType button = result.orElse(ButtonType.OK);
+        if (result.get() == buttonTypeOne) {
+            restart_game();
+        }
+        else {
+            System.exit(0);
+        }
+
+    }
 
     void drawline(Circle currentCircle, Circle lastCircle) {
         line = new Line();
@@ -128,7 +176,6 @@ public class ComputerTest implements Initializable {
     }
 
     void computerPoint(Circle currentCircle, Circle newCircle, String lineID) {
-
         Circle nC = (Circle) mainGame.lookup('#' + circleActualID);
         drawline(nC, newCircle);
         circleActualID = newCircle.getId();
@@ -139,7 +186,6 @@ public class ComputerTest implements Initializable {
         listLine.add(lineID);
         setColorVisited();
         newCircle.setFill(Color.AQUA);
-        System.out.println(lineID + "\n");
     }
 
     void computerEngine() {
@@ -152,29 +198,111 @@ public class ComputerTest implements Initializable {
         Integer idCS2 = Integer.valueOf(circleActualID) - 11;
         Integer idCS3 = Integer.valueOf(circleActualID) - 9;
         Integer idCS4 = Integer.valueOf(circleActualID) + 11;
-        Circle CR = (Circle) mainGame.lookup('#' + String.valueOf(idCR));
-        Circle CL = (Circle) mainGame.lookup('#' + String.valueOf(idCL));
-        Circle CS1 = (Circle) mainGame.lookup('#' + String.valueOf(idCS1));
-        Circle CS2 = (Circle) mainGame.lookup('#' + String.valueOf(idCS2));
-        Circle CS3 = (Circle) mainGame.lookup('#' + String.valueOf(idCS3));
-        Circle CS4 = (Circle) mainGame.lookup('#' + String.valueOf(idCS4));
-        Circle CU = (Circle) mainGame.lookup('#' + String.valueOf(idCU));
-        Circle CD = (Circle) mainGame.lookup('#' + String.valueOf(idCD));
-        String lR = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CR.getId()));
-        String lU = String.valueOf("" + CU.getId() + Integer.valueOf(currentCircle.getId()));
-        String lL = String.valueOf("" + CL.getId() + Integer.valueOf(currentCircle.getId()));
-        String lD = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CD.getId()));
-        String lS1 = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CS1.getId()));
-        String lS2 = String.valueOf("" + CS2.getId() + Integer.valueOf(currentCircle.getId()));
-        String lS3 = String.valueOf("" + CS3.getId() + Integer.valueOf(currentCircle.getId()));
-        String lS4 = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CS4.getId()));
+        Circle CR = null;
+        Circle CL = null;
+        Circle CS1 = null;
+        Circle CS2 = null;
+        Circle CS3 = null;
+        Circle CS4 = null;
+        Circle CU = null;
+        Circle CD = null;
+        Integer actualID = Integer.valueOf(currentCircle.getId());
+        if (actualID < 20 && actualID > 10) {
+            CL = (Circle) mainGame.lookup('#' + "0" + String.valueOf(idCL));
+            CU = (Circle) mainGame.lookup('#' + String.valueOf(idCU));
+            CD = (Circle) mainGame.lookup('#' + String.valueOf(idCD));
+            CR = (Circle) mainGame.lookup('#' + String.valueOf(idCR));
+            CS2 = (Circle) mainGame.lookup('#' + "0" + String.valueOf(idCS2));
+            CS3 = (Circle) mainGame.lookup('#' + "0" + String.valueOf(idCS3));
+            CS1 = (Circle) mainGame.lookup('#' + String.valueOf(idCS1));
+            CS4 = (Circle) mainGame.lookup('#' + String.valueOf(idCS4));
+
+        } else if (actualID <= 10) {
+            CL = (Circle) mainGame.lookup('#' + "0" + String.valueOf(idCL));
+            CU = (Circle) mainGame.lookup('#' + "0" + String.valueOf(idCU));
+            CD = (Circle) mainGame.lookup('#' + "0" + String.valueOf(idCD));
+            CR = (Circle) mainGame.lookup('#' + String.valueOf(idCR));
+            CS2 = (Circle) mainGame.lookup('#' + "0" + String.valueOf(idCS2));
+            CS3 = (Circle) mainGame.lookup('#' + "0" + String.valueOf(idCS3));
+            CS1 = (Circle) mainGame.lookup('#' + String.valueOf(idCS1));
+            CS4 = (Circle) mainGame.lookup('#' + String.valueOf(idCS4));
+
+        } else {
+            CL = (Circle) mainGame.lookup('#' + String.valueOf(idCL));
+            CU = (Circle) mainGame.lookup('#' + String.valueOf(idCU));
+            CD = (Circle) mainGame.lookup('#' + String.valueOf(idCD));
+            CR = (Circle) mainGame.lookup('#' + String.valueOf(idCR));
+            CS2 = (Circle) mainGame.lookup('#' + String.valueOf(idCS2));
+            CS3 = (Circle) mainGame.lookup('#' + String.valueOf(idCS3));
+            CS1 = (Circle) mainGame.lookup('#' + String.valueOf(idCS1));
+            CS4 = (Circle) mainGame.lookup('#' + String.valueOf(idCS4));
+
+        }
+        String lR = null;
+        String lU = null;
+        String lL = null;
+        String lD = null;
+        String lS1 = null;
+        String lS2 = null;
+        String lS3 = null;
+        String lS4 = null;
+
+        if (Integer.valueOf(currentCircle.getId()) < 10) {
+            lR = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CR.getId()));
+            lS1 = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CS1.getId()));
+            lS4 = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CS4.getId()));
+        } else if (Integer.valueOf(currentCircle.getId()) == 10 || Integer.valueOf(currentCircle.getId()) == 20) {
+            lD = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CD.getId()));
+            lS4 = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CS4.getId()));
+            lS3 = String.valueOf("" + CS3.getId() + Integer.valueOf(currentCircle.getId()));
+        } else if (Integer.valueOf(currentCircle.getId()) > 80 && Integer.valueOf(currentCircle.getId()) < 91) {
+            lL = String.valueOf("" + CL.getId() + Integer.valueOf(currentCircle.getId()));
+            lS2 = String.valueOf("" + CS2.getId() + Integer.valueOf(currentCircle.getId()));
+            lS3 = String.valueOf("" + CS3.getId() + Integer.valueOf(currentCircle.getId()));
+        } else {
+            lR = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CR.getId()));
+            lU = String.valueOf("" + CU.getId() + Integer.valueOf(currentCircle.getId()));
+            lL = String.valueOf("" + CL.getId() + Integer.valueOf(currentCircle.getId()));
+            lD = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CD.getId()));
+            lS1 = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CS1.getId()));
+            lS2 = String.valueOf("" + CS2.getId() + Integer.valueOf(currentCircle.getId()));
+            lS3 = String.valueOf("" + CS3.getId() + Integer.valueOf(currentCircle.getId()));
+            lS4 = String.valueOf("" + Integer.valueOf(currentCircle.getId() + CS4.getId()));
+        }
+
         if (turnComputer.equals(true)) {
-            if (Integer.valueOf(currentCircle.getId()) == 11) {
+            if (Integer.valueOf(currentCircle.getId()) < 10) {
+                if (listVisited.contains(CS1.getId()) && !listLine.contains(lS1)) {
+                    computerPoint(currentCircle, CS1, lS1);
+                    computerEngine();
+                } else if (listVisited.contains(CR.getId()) && !listLine.contains(lR)) {
+                    computerPoint(currentCircle, CR, lR);
+                    computerEngine();
+                } else if (!listLine.contains(lS1)) {
+                    computerPoint(currentCircle, CS1, lS1);
+                    computerEngine();
+                } else if (!listLine.contains(lR)) {
+                    computerPoint(currentCircle, CR, lR);
+                    computerEngine();
+                } else if (listVisited.contains(CS4.getId()) && !listLine.contains(lS4)) {
+                    computerPoint(currentCircle, CS4, lS4);
+                    computerEngine();
+                } else if (!listLine.contains(lS4)) {
+                    computerPoint(currentCircle, CS4, lS4);
+                    computerEngine();
+                } else {
+                    System.out.println("Wygrał gracz 1");
+                }
+            }
+            if (Integer.valueOf(currentCircle.getId()) == 19) {
                 if (listVisited.contains(CS1.getId()) && !listLine.contains(lS1)) {
                     computerPoint(currentCircle, CS1, lS1);
                     computerEngine();
                 } else if (listVisited.contains(CU.getId()) && !listLine.contains(lU)) {
                     computerPoint(currentCircle, CU, lU);
+                    computerEngine();
+                } else if (listVisited.contains(CS2.getId()) && !listLine.contains(lS2)) {
+                    computerPoint(currentCircle, CS2, lS2);
                     computerEngine();
                 } else if (listVisited.contains(CR.getId()) && !listLine.contains(lR)) {
                     computerPoint(currentCircle, CR, lR);
@@ -183,6 +311,8 @@ public class ComputerTest implements Initializable {
                     computerPoint(currentCircle, CS1, lS1);
                 } else if (!listLine.contains(lU)) {
                     computerPoint(currentCircle, CU, lU);
+                } else if (!listLine.contains(lS2)) {
+                    computerPoint(currentCircle, CS2, lS2);
                 } else if (!listLine.contains(lR)) {
                     computerPoint(currentCircle, CR, lR);
                 } else if (listVisited.contains(CL.getId()) && !listLine.contains(lL)) {
@@ -190,11 +320,6 @@ public class ComputerTest implements Initializable {
                     computerEngine();
                 } else if (!listLine.contains(lL)) {
                     computerPoint(currentCircle, CL, lL);
-                } else if (listVisited.contains(CS3.getId()) && !listLine.contains(lS3)) {
-                    computerPoint(currentCircle, CS3, lS3);
-                    computerEngine();
-                } else if (!listLine.contains(lS3)) {
-                    computerPoint(currentCircle, CS3, lS3);
                 } else if (listVisited.contains(CD.getId()) && !listLine.contains(lD)) {
                     computerPoint(currentCircle, CD, lD);
                     computerEngine();
@@ -209,9 +334,89 @@ public class ComputerTest implements Initializable {
                     System.out.println("Wygrał gracz 1");
                 }
             }
+            if (Integer.valueOf(currentCircle.getId()) == 71) {
+                if (listVisited.contains(CS2.getId()) && !listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS2, lS2);
+                    computerEngine();
+                } else if (listVisited.contains(CU.getId()) && !listLine.contains(lU)) {
+                    computerPoint(currentCircle, CU, lU);
+                    computerEngine();
+                } else if (listVisited.contains(CL.getId()) && !listLine.contains(lL)) {
+                    computerPoint(currentCircle, CL, lL);
+                    computerEngine();
+                } else if (listVisited.contains(CS3.getId()) && !listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS3, lS3);
+                    computerEngine();
+                } else if (!listLine.contains(lS2)) {
+                    computerPoint(currentCircle, CS2, lS2);
+                } else if (!listLine.contains(lU)) {
+                    computerPoint(currentCircle, CU, lU);
+                } else if (!listLine.contains(lR)) {
+                    computerPoint(currentCircle, CR, lR);
+                } else if (!listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS3, lS3);
+                } else if (listVisited.contains(CR.getId()) && !listLine.contains(lR)) {
+                    computerPoint(currentCircle, CR, lR);
+                    computerEngine();
+                } else if (!listLine.contains(lR)) {
+                    computerPoint(currentCircle, CR, lR);
+                } else if (listVisited.contains(CD.getId()) && !listLine.contains(lD)) {
+                    computerPoint(currentCircle, CD, lD);
+                    computerEngine();
+                } else if (!listLine.contains(lD)) {
+                    computerPoint(currentCircle, CD, lD);
+                } else if (listVisited.contains(CS4.getId()) && !listLine.contains(lS4)) {
+                    computerPoint(currentCircle, CS4, lS4);
+                    computerEngine();
+                } else if (!listLine.contains(lS4)) {
+                    computerPoint(currentCircle, CS4, lS4);
+                } else {
+                    System.out.println("Wygrał gracz 1");
+                }
+            }
+            if (Integer.valueOf(currentCircle.getId()) == 79) {
+                if (listVisited.contains(CS2.getId()) && !listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS2, lS2);
+                    computerEngine();
+                } else if (!listLine.contains(lS2)) {
+                    computerPoint(currentCircle, CS2, lS2);
+                } else if (listVisited.contains(CS3.getId()) && !listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS3, lS3);
+                    computerEngine();
+                } else if (listVisited.contains(CU.getId()) && !listLine.contains(lU)) {
+                    computerPoint(currentCircle, CU, lU);
+                    computerEngine();
+                } else if (listVisited.contains(CR.getId()) && !listLine.contains(lR)) {
+                    computerPoint(currentCircle, CR, lR);
+                    computerEngine();
+                } else if (!listLine.contains(lS2)) {
+                    computerPoint(currentCircle, CS2, lS2);
+                } else if (!listLine.contains(lU)) {
+                    computerPoint(currentCircle, CU, lU);
+                } else if (!listLine.contains(lR)) {
+                    computerPoint(currentCircle, CR, lR);
+                } else if (listVisited.contains(CL.getId()) && !listLine.contains(lL)) {
+                    computerPoint(currentCircle, CL, lL);
+                    computerEngine();
+                } else if (!listLine.contains(lL)) {
+                    computerPoint(currentCircle, CL, lL);
+                } else if (listVisited.contains(CD.getId()) && !listLine.contains(lD)) {
+                    computerPoint(currentCircle, CD, lD);
+                    computerEngine();
+                } else if (!listLine.contains(lD)) {
+                    computerPoint(currentCircle, CD, lD);
+                } else if (listVisited.contains(CS4.getId()) && !listLine.contains(lS4)) {
+                    computerPoint(currentCircle, CS1, lS1);
+                    computerEngine();
+                } else if (!listLine.contains(lS4)) {
+                    computerPoint(currentCircle, CS1, lS1);
+                } else {
+                    System.out.println("Wygrał gracz 1");
+                }
+            }
             if (Integer.valueOf(currentCircle.getId()) < 40 && Integer.valueOf(currentCircle.getId()) > 30
-                    || Integer.valueOf(currentCircle.getId()) < 30 && Integer.valueOf(currentCircle.getId()) > 20
-                    || Integer.valueOf(currentCircle.getId()) < 20 && Integer.valueOf(currentCircle.getId()) > 11) {
+                    || Integer.valueOf(currentCircle.getId()) < 30 && Integer.valueOf(currentCircle.getId()) > 19
+                    || Integer.valueOf(currentCircle.getId()) < 19 && Integer.valueOf(currentCircle.getId()) > 11) {
                 if (listVisited.contains(CS1.getId()) && !listLine.contains(lS1)) {
                     computerPoint(currentCircle, CS1, lS1);
                     computerEngine();
@@ -302,8 +507,8 @@ public class ComputerTest implements Initializable {
                 }
             }
             if (Integer.valueOf(currentCircle.getId()) > 50 && Integer.valueOf(currentCircle.getId()) < 60
-                    || Integer.valueOf(currentCircle.getId()) > 60 && Integer.valueOf(currentCircle.getId()) < 70
-                    || Integer.valueOf(currentCircle.getId()) > 70 && Integer.valueOf(currentCircle.getId()) < 80) {
+                    || Integer.valueOf(currentCircle.getId()) > 60 && Integer.valueOf(currentCircle.getId()) < 71
+                    || Integer.valueOf(currentCircle.getId()) > 71 && Integer.valueOf(currentCircle.getId()) < 80) {
                 if (listVisited.contains(CS2.getId()) && !listLine.contains(lS2)) {
                     computerPoint(currentCircle, CS2, lS2);
                     computerEngine();
@@ -348,8 +553,128 @@ public class ComputerTest implements Initializable {
                     System.out.println("Wygrał gracz 1");
                 }
             }
+            if (Integer.valueOf(currentCircle.getId()) > 80) {
+                if (listVisited.contains(CS2.getId()) && !listLine.contains(lS2)) {
+                    computerPoint(currentCircle, CS2, lS2);
+                    computerEngine();
+                } else if (listVisited.contains(CL.getId()) && !listLine.contains(lL)) {
+                    computerPoint(currentCircle, CL, lL);
+                    computerEngine();
+                } else if (!listLine.contains(lS2)) {
+                    computerPoint(currentCircle, CS2, lS2);
+                    computerEngine();
+                } else if (!listLine.contains(lL)) {
+                    computerPoint(currentCircle, CL, lL);
+                    computerEngine();
+                } else if (listVisited.contains(CS3.getId()) && !listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS3, lS3);
+                    computerEngine();
+                } else if (!listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS3, lS3);
+                    computerEngine();
+                } else {
+                    System.out.println("Wygrał gracz 1");
+                }
+            }
+            if (Integer.valueOf(currentCircle.getId()) == 40 || Integer.valueOf(currentCircle.getId()) == 20) {
+                if (listVisited.contains(CS4.getId()) && !listLine.contains(lS4)) {
+                    computerPoint(currentCircle, CS4, lS4);
+                    computerEngine();
+                } else if (listVisited.contains(CD.getId()) && !listLine.contains(lD)) {
+                    computerPoint(currentCircle, CD, lD);
+                    computerEngine();
+                } else if (!listLine.contains(lS4)) {
+                    computerPoint(currentCircle, CS4, lS4);
+                    computerEngine();
+                } else if (!listLine.contains(lD)) {
+                    computerPoint(currentCircle, CD, lD);
+                    computerEngine();
+                } else if (listVisited.contains(CS3.getId()) && !listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS3, lS3);
+                    computerEngine();
+                } else if (!listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS3, lS3);
+                    computerEngine();
+                } else {
+                    System.out.println("Wygrał gracz 1");
+                }
+            }
+            if (Integer.valueOf(currentCircle.getId()) == 60 || Integer.valueOf(currentCircle.getId()) == 70) {
+                if (listVisited.contains(CS3.getId()) && !listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS3, lS3);
+                    computerEngine();
+                } else if (listVisited.contains(CD.getId()) && !listLine.contains(lD)) {
+                    computerPoint(currentCircle, CD, lD);
+                    computerEngine();
+                } else if (!listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS3, lS3);
+                    computerEngine();
+                } else if (!listLine.contains(lD)) {
+                    computerPoint(currentCircle, CD, lD);
+                    computerEngine();
+                } else if (listVisited.contains(CS4.getId()) && !listLine.contains(lS4)) {
+                    computerPoint(currentCircle, CS4, lS4);
+                    computerEngine();
+                } else if (!listLine.contains(lS4)) {
+                    computerPoint(currentCircle, CS4, lS4);
+                    computerEngine();
+                } else {
+                    System.out.println("Wygrał gracz 1");
+                }
+            }
+            if (Integer.valueOf(currentCircle.getId()) == 11) {
+                if (listVisited.contains(CS1.getId()) && !listLine.contains(lS1)) {
+                    computerPoint(currentCircle, CS1, lS1);
+                    computerEngine();
+                } else if (listVisited.contains(CU.getId()) && !listLine.contains(lU)) {
+                    computerPoint(currentCircle, CU, lU);
+                    computerEngine();
+                } else if (listVisited.contains(CR.getId()) && !listLine.contains(lR)) {
+                    computerPoint(currentCircle, CR, lR);
+                    computerEngine();
+                } else if (!listLine.contains(lS1)) {
+                    computerPoint(currentCircle, CS1, lS1);
+                } else if (!listLine.contains(lU)) {
+                    computerPoint(currentCircle, CU, lU);
+                } else if (!listLine.contains(lR)) {
+                    computerPoint(currentCircle, CR, lR);
+                } else if (listVisited.contains(CL.getId()) && !listLine.contains(lL)) {
+                    computerPoint(currentCircle, CL, lL);
+                    computerEngine();
+                } else if (!listLine.contains(lL)) {
+                    computerPoint(currentCircle, CL, lL);
+                } else if (listVisited.contains(CS3.getId()) && !listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS3, lS3);
+                    computerEngine();
+                } else if (!listLine.contains(lS3)) {
+                    computerPoint(currentCircle, CS3, lS3);
+                } else if (listVisited.contains(CD.getId()) && !listLine.contains(lD)) {
+                    computerPoint(currentCircle, CD, lD);
+                    computerEngine();
+                } else if (!listLine.contains(lD)) {
+                    computerPoint(currentCircle, CD, lD);
+                } else if (listVisited.contains(CS4.getId()) && !listLine.contains(lS4)) {
+                    computerPoint(currentCircle, CS4, lS4);
+                    computerEngine();
+                } else if (!listLine.contains(lS4)) {
+                    computerPoint(currentCircle, CS4, lS4);
+                } else {
+                    System.out.println("Wygrał gracz 1");
+                }
+            }
+            if (Integer.valueOf(currentCircle.getId()) == 30) {
+                alert("Wygrana!!", "Czy chcesz zagrać jeszcze raz?", true);
+            }
+            if (Integer.valueOf(currentCircle.getId()) == 50) {
+                alert("Wygrana!!", "Czy chcesz zagrać jeszcze raz?", true);
+            }
+            if (Integer.valueOf(currentCircle.getId()) == 40 && listVisited.contains("40")) {
+                alert("Wygrana!!", "Czy chcesz zagrać jeszcze raz?", true);
+            }
         }
+
     }
+
 
     void enablePoint(Circle currentCircle) {
         for (int i = 0; i <= 8; i++) {

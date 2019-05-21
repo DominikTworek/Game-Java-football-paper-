@@ -16,6 +16,8 @@ public class StartGameController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
     }
 
+    public static Boolean computer;
+
     @FXML
     void gameComputer(ActionEvent event) {
         try {
